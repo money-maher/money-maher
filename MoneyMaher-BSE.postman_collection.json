@@ -1,0 +1,63 @@
+{
+  "info": {
+    "name": "Money Maher BSE",
+    "_postman_id": "mm-bse",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+  },
+  "item": [
+    {
+      "name": "Place BSE Order",
+      "request": {
+        "method": "POST",
+        "header": [
+          {
+            "key": "Content-Type",
+            "value": "application/json"
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{\"clientCode\": \"CLI001\", \"schemeCode\": \"120503\", \"orderType\": \"PURCHASE\", \"amount\": 5000, \"paymentMode\": \"UPI\"}"
+        },
+        "url": {
+          "raw": "https://api.moneymaher.in/api/bse/order",
+          "host": [
+            "https://api.moneymaher.in"
+          ],
+          "path": [
+            "api",
+            "bse",
+            "order"
+          ]
+        }
+      }
+    },
+    {
+      "name": "Batch Upload",
+      "request": {
+        "method": "POST",
+        "header": [
+          {
+            "key": "Content-Type",
+            "value": "application/json"
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{\"orders\": [{\"clientCode\": \"CLI001\", \"schemeCode\": \"120503\", \"orderType\": \"PURCHASE\", \"amount\": 5000}]}"
+        },
+        "url": {
+          "raw": "https://api.moneymaher.in/api/bse/batch",
+          "host": [
+            "https://api.moneymaher.in"
+          ],
+          "path": [
+            "api",
+            "bse",
+            "batch"
+          ]
+        }
+      }
+    }
+  ]
+}
