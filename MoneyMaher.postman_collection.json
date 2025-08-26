@@ -1,0 +1,45 @@
+{
+  "info": {
+    "name": "MoneyMaher API",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+  },
+  "item": [
+    {
+      "name": "Health",
+      "request": {
+        "method": "GET",
+        "url": {
+          "raw": "https://api.moneymaher.in/api/health"
+        }
+      }
+    },
+    {
+      "name": "AMFI NAV",
+      "request": {
+        "method": "GET",
+        "url": {
+          "raw": "https://api.moneymaher.in/api/amfi/nav?code=120503"
+        }
+      }
+    },
+    {
+      "name": "Place BSE Order",
+      "request": {
+        "method": "POST",
+        "header": [
+          {
+            "key": "Content-Type",
+            "value": "application/json"
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{\"clientCode\": \"CLI001\", \"schemeCode\": \"120503\", \"orderType\": \"PURCHASE\", \"amount\": 5000, \"paymentMode\": \"UPI\"}"
+        },
+        "url": {
+          "raw": "https://api.moneymaher.in/api/bse/order"
+        }
+      }
+    }
+  ]
+}

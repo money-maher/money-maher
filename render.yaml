@@ -1,0 +1,10 @@
+services:
+  - type: web
+    name: moneymaher-backend
+    env: node
+    plan: free
+    region: oregon
+    repo: <replace-with-github-repo>
+    branch: main
+    buildCommand: cd backend && npm ci
+    startCommand: cd backend && npm start
